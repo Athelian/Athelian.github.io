@@ -1,0 +1,249 @@
+div {
+    font-size: large;
+}
+
+section {
+    display: flex;
+}
+
+button {
+    border: none;
+}
+
+#status {
+    margin-top: 3%;
+    display: inline-block;
+    width: calc(100% - 70px - 5%);
+}
+
+#textPostOption {
+    border-radius: 30px 30px 30px 30px;
+    width: 100%;
+    text-indent: 5px;
+    font-size: larger;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+}
+
+.dropdown {     /*Parent container, removes white space between child dropdown buttons*/
+    font-size: 0%;
+}
+
+.dropdownButton {
+    background-color: #f1f1f1;
+}
+
+.dropbtn {      /*Dropdown buttons*/
+    font-size: x-large;
+    width: 33%;
+    height: 40px;
+    
+}
+
+.dropdown-content > button {    /*The buttons inside the dropdown menu*/
+    display: block; /*Make the buttons appear on top of one another*/
+}
+
+hr {            /*Gray separator line*/
+    width:95%;
+    opacity: 50%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.dropbtn-text {
+    pointer-events: none;
+}
+
+#userPost {
+    background-color:  rgb(223,227,238);
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    border: none;
+    font-weight: bold;
+    font-size: larger;
+    width: 90%;
+    height: 40px;
+    margin-top: 3%;
+}
+
+#update {
+    margin-bottom: -13px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 0px;
+    font-size: x-large;
+    visibility: hidden;
+    display: flex;
+    overflow: hidden;
+    line-height: 50px;
+    justify-content: center;
+    transition: height 1s, visibility 0.6s ease-in-out;
+}
+
+.likes-bar {
+    font-size: medium;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    margin-left: 2%;
+    height: 15px;
+    margin-top: 5px;
+}
+  
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+button {
+    background-color: white;
+}
+
+.show {display: block;}
+
+div::first-letter {
+    text-transform: capitalize;
+}
+
+#postbox {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 18px;
+    margin-bottom: 30px;
+}
+
+.name {
+    margin-left: 10px;
+    position: relative;
+    bottom: 8px;
+    text-transform: capitalize;
+}
+
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display:inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+#camera {
+    font-size: smaller;
+    margin-left: 100px;
+}
+
+.friend-bar {
+    height: 40px;
+}
+
+.friends-bar{
+    white-space: nowrap;
+    margin-left: 2%;
+}
+
+#magnifying-glass, #ellipsis {
+    margin-left: 10px;
+}
+
+
+div.newsfeed-column {
+    flex: 2.5;
+    margin-top: 10%;
+}
+
+div.friends-bar {
+    flex: 1;
+    margin-top: 10%;
+
+}
+
+#top-of-friends-bar {
+    margin-bottom: 12px;
+}
+
+#shortcut-bar {
+    flex: 1;
+    margin-top: 10%;
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+#hashtagselector {
+    font-weight: bold;
+    margin-left: 28px;
+}
+
+#feelingselector {
+    margin-left: 33px;
+}
+
+#imageselector {
+    margin-left: 30px;
+}
+
+.friends-bar {
+    color: gray
+}
+
+.post {
+    background-color: white;
+    border-radius: 18px;
+    margin-bottom: 20px;
+}
+
+div.friend {
+    font-weight: bold;
+    line-height: 2.0;
+}
+
+#like-comment-share {
+    text-align: center;
+    white-space: nowrap;
+}
+
+#like-comment-share > button {
+    width:33%;
+    font-size: medium;
+    margin-bottom: 20px;
+}
+
+.post-text {
+    margin-left:6px;
+}
+
+#post-name {
+    margin-left: 10px;
+    position: relative;
+    bottom: 15px;
+    text-transform: capitalize;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.post-time {
+    font-size: small;
+    margin-left: 60px;
+}
+
+#visibility {
+    font-size: x-small;
+}
