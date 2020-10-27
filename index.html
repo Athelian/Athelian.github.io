@@ -2,59 +2,13 @@
 
 
 <html>
+
 <head>
-  <link rel="stylesheet" href="style.css">
-  <title>Code Chrysalis Bacefook Newsfeed</title>
+  Eliot Austin-Forbes
 </head>
 
-<body style="background-color: #dfe3ee;">
-  <section>  <!-- Flex applicator to make internal three divs into three sections -->
-    <div id='shortcut-bar'>
-      <img id='user-avatar' class = 'user-avatar'>
-      <span class=user-name></span>
-    </div>
-
-    <div class='newsfeed-column'>
-      <div id = 'postbox'>
-        <div class="form-div">
-          <img id='user-avatar' class='user-avatar'>
-          <form name='status' id='status' class="text-center">
-            <input type='text' oninput="changeButtonColour(); return false;" placeholder="dasd" id='textPostOption' name = 'form'>
-          </form>
-        </div>
-        <hr>
-        <div class = 'dropdown'>
-          <button class='dropbtn' id=hashtag-button>
-            <div class='dropbtn-text' id='hashtag'>hashtag</div>
-          </button>
-          <button class='dropbtn' id='feeling-button'>
-            <div class='dropbtn-text' id='feeling'>feeling</div>
-          </button>
-          <button class='dropbtn' id='image-button'>
-            <div class='dropbtn-text' id='image'>image</div>
-          </button>
-        </div>
-        <button id='userPost' onclick="genUserPost()">Post</button>
-        <br>
-      </div>
-      <button id='update' onclick="updateButton(this)"></button>
-      <div id="newsfeed">
-      </div>
-    </div>
-
-    <div class='friends-bar' id='friends-bar'>
-      <div id='top-of-friends-bar'>Sponsored</div>
-      <hr>
-      <div id='top-of-friends-bar'>Contacts 
-        <span id='camera'>&#127909 </span> 
-        <span id='magnifying-glass'> &#128269 </span> 
-        <span id='ellipsis'> ... </span>
-      </div>
-    </div>
-  </section>
+<body>
+  <link href="FaceBook-Clone\index.html" rel="import" />
 </body>
-</html>
 
-<script src="moment/moment.js"></script>
-<script src="scripts/data_generator.js"></script>
-<script src="scripts/main.js"></script>
+</html>
