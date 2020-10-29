@@ -11,7 +11,7 @@ body, html {
     background-size: cover;
     position: relative;
 
-    transition: opacity 5s ease;
+    transition: opacity 1s ease-in-out
 }
 
 #bg {
@@ -73,5 +73,5 @@ button:hover {
     margin-top: 6.5%;
     height: 0;
     overflow: hidden;
-    transition: height 1s ease-out, 1.5s ease-in-out, margin-top 1.5s ease-in-out, transform 1.5s ease-in, width 1.5s;
+    transition: height 1s ease-out, 1s ease-in-out, margin-top 1s ease-in-out, transform 1s ease-in, width 1s;
 }
