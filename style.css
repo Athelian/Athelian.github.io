@@ -10,18 +10,15 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-
-    transition: opacity 1s ease-in-out
+    transition: opacity 200s ease-in;
 }
 
 #bg {
-    background-image: url('Images/17.png');
-    opacity: 1;
+    background-image: url('Images/Pink/2.png');;
 }
 
 #bg-f {
-    background-image: url('Images/18.png');
-    opacity: 1;
+    background-image: url('Images/Pink/1.png');
 }
 
 .title-box {
@@ -70,7 +67,7 @@ button:hover {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    margin-top: 6.5%;
+    margin-top: 88px;
     height: 0;
     overflow: hidden;
     transition: height 1s ease-out, 1s ease-in-out, margin-top 1s ease-in-out, transform 1s ease-in, width 1s;
