@@ -49,11 +49,11 @@
       if (count % 2 === 0) {
         document.getElementById('bg').style.opacity = "100%"
         document.getElementById('bg-f').style.opacity = "0%"
-        document.getElementById('bg-f').style.backgroundImage = "url(images/"+count+".png)";
+        document.getElementById('bg-f').style.backgroundImage = "url(Images/"+count+".png)";
       } else {
         document.getElementById('bg-f').style.opacity = "100%"
         document.getElementById('bg').style.opacity = "0%"
-        document.getElementById('bg').style.backgroundImage = "url(images/"+count+".png)";
+        document.getElementById('bg').style.backgroundImage = "url(Images/"+count+".png)";
       }
       setTimeout(function (){changeBackground(--count)}, 80);
     }
