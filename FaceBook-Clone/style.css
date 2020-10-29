@@ -167,13 +167,10 @@ div::first-letter {
 
 div.newsfeed-column {
     flex: 2.5;
-    margin-top: 10%;
 }
 
 div.friends-bar {
     flex: 1;
-    margin-top: 10%;
-
 }
 
 #top-of-friends-bar {
@@ -182,7 +179,6 @@ div.friends-bar {
 
 #shortcut-bar {
     flex: 1;
-    margin-top: 10%;
     white-space: nowrap;
     margin-right: 20px;
 }
