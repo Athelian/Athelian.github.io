@@ -19,6 +19,7 @@ body, html {
 
 #bg-f {
     background-image: url('Images/Pink/1.png');
+    overflow: scroll;
 }
 
 .title-box {

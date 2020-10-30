@@ -67,7 +67,8 @@ const run = () => {
       let projects = document.createElement('div');
       projects.style.marginLeft = '13%';
       projects.style.width = '70%';
-      projects.style.paddingTop = '15%'
+      projects.style.marginTop = '10%';
+      projects.style.background = 'rgba(255, 255, 255, 0.2)';
 
       let image = new Image();
       image.src = 'Images/tpMtgHoYg6.gif';
@@ -81,18 +82,19 @@ const run = () => {
       science degree, where fundamental concepts are made palatable by the consistency of a statically-typed language:";
 
       projectText.style.fontSize = 'x-large';
-
-
-      // let page = document.createElement('object');
-      // page.data = "https://gist.github.com/Athelian/4699cca9db0c1beb146d672a20966c6d.js";
-
-
       projects.append(projectText);
       projects.append(document.createElement('br'));
       projects.append(image);
+
+      let readme = document.createElement('iframe');
+      readme.src = "Chess/Chess.html";
+      readme.width = '100%';
+      readme.height = '800px';
+      readme.style.background = 'rgba(255, 255, 255, 0.6)'
+
+      projects.append(readme);
       
       bgF.prepend(projects);
-      //bgF.prepend(page)
     }
     else { 
       titleBox.setAttribute("style", "all: null");
