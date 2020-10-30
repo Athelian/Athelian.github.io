@@ -2,9 +2,15 @@
 
 <head>
   <link rel="stylesheet" href="style.css">
+  <!-- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script> 
+  $(function(){
+    $("#includedContent").load("Chess/readme.html"); 
+  });
+  </script>  -->
 </head>
 
-<body>
+<body onload="run()">
 <div class="bg" id="bg">
   <div class="bg" id="bg-f">
     <div>
@@ -12,11 +18,16 @@
         <div id="title-text">Eliot<br>Austin-Forbes</div>
         <br>
       </div>
-      <div class="hidden-nav" id="hidden-nav" >
-        <button class="link_hidden" id = 'Projects'>Projects</button>
-        <button class="link_hidden">About</button>
-        <button class="link_hidden">GitHub</button>
-      </div>
+
+      <button class='link' id='Projects'>Projects</button>
+      <button class='link' id='About'>About</button>
+      <button class='link' id='GitHub'>GitHub</button>
+
+      <div id="includedContent"></div>
+
+      <embed src="https://www.google.com/" style="width:500px; height: 300px;">
+
+      
     </div>
   </div>
 </body>

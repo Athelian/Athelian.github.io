@@ -58,31 +58,31 @@ function generateColor(colorStart,colorEnd,colorCount){
   return saida;
 }
 
-const toPinkHexs = [];
+const toColorHexs = [];
 
 for (let i = 0; i < 9; i++) {
-  toPinkHexs[i] = generateColor(trianglify.utils.colorbrewer.Blues[i], trianglify.utils.colorbrewer.PuRd[i], 40);
+  toColorHexs[i] = generateColor(trianglify.utils.colorbrewer.Blues[i], trianglify.utils.colorbrewer.Purples[i], 40);
 }
 
-let truePink = [];
+let trueColor = [];
 
-for (let i = 0; i < toPinkHexs[0].length - 1; i++) {
-  for (let j = 0; j < toPinkHexs.length - 1; j++) {
-    if (truePink[i]) {
-      truePink[i].push(toPinkHexs[j][i]);
+for (let i = 0; i < toColorHexs[0].length - 1; i++) {
+  for (let j = 0; j < toColorHexs.length - 1; j++) {
+    if (trueColor[i]) {
+      trueColor[i].push(toColorHexs[j][i]);
     } else {
-      truePink[i] = [toPinkHexs[j][i]]
+      trueColor[i] = [toColorHexs[j][i]]
     }
   }
 }
 
-for (let i = 0; i < truePink.length; i++) {
+for (let i = 0; i < trueColor.length; i++) {
   let canvas = trianglify({
     width: 1280,
     height: 720,
-    xColors: truePink[i],
+    xColors: trueColor[i],
     seed: 1
   }).toCanvas()
-  let file = fs.createWriteStream('Images/Pink/' + (truePink.length - i) + '.png')
+  let file = fs.createWriteStream('Images/Purple/' + (trueColor.length - i) + '.png')
   canvas.createPNGStream().pipe(file)
 }

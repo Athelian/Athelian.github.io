@@ -1,12 +1,13 @@
-window.onload = function() {
-  const menuButtons = document.getElementById("hidden-nav");
+const run = () => {
+  const buttons = document.getElementsByClassName("link");
   const titleBox = document.getElementById("title-box");
   (openDrawer = () => {
-    menuButtons.style.height = "50px";
     titleBox.style.height = "250px";
+    for (button of buttons) {
+      button.style.height = '50px';
+    }
   })()
 
-  const projectButton = document.getElementById("Projects");
   const bgF = document.getElementById('bg-f');
   const bg  = document.getElementById('bg');
 
@@ -22,11 +23,11 @@ window.onload = function() {
       if (count % 2 === 0) { // Alternate between two bg layers
         bgF.style.opacity = "100%";
         bg.style.opacity  = "0%";
-        bg.style.backgroundImage  = "url(Images/Pink/"+count+".png)";
+        bg.style.backgroundImage  = "url(Images/"+colorSelected+"/"+count+".png)";
       } else {
         bg.style.opacity = "100%";
         bgF.style.opacity = "0%";
-        bgF.style.backgroundImage = "url(Images/Pink/"+count+".png)";
+        bgF.style.backgroundImage = "url(Images/"+colorSelected+"/"+count+".png)";
       }
       if (!increasing && count === 32) { // Reopen the drawer on blending back down
         openDrawer();
@@ -34,29 +35,90 @@ window.onload = function() {
       setTimeout(function () {
         if (increasing)  { blendBackground(++count) } 
                     else { blendBackground(--count) }
-                                }, 45);
+                                }, 50);
     }
   }
 
-  const projectButtonAnimator = (increasing) => {
+  const projectButtonAnimator = (increasing, clickedBUtton) => {
     let blendInitialiser;
     if (increasing) {
-      titleBox.setAttribute("style", "height: 200px; opacity: 0.05"); 
-      menuButtons.setAttribute("style", "width: 100%; height: 50px; top: 0%; margin-top: 2%; transform: translate(-50%, -0%);");
+      titleBox.setAttribute("style", "height: 200px; opacity: 0.05");
+      switch (colorSelected) {
+        case 'Orange':
+          titleBox.style.borderColor = 'rgba(241, 105, 19, 0.4)';
+        case 'Pink':
+          titleBox.style.borderColor = 'rgba(231, 41, 138, 0.4)';
+      }
+      for (button of buttons) {
+        if (button !== clickedBUtton) {
+          button.setAttribute("style", 
+          "font-size: 1.2cm; height: 100px; left: calc(96% - 30px); margin-left:0; margin-top: 20px; transform: translate(-50%, -50%) rotate(90deg);");
+          if (button.id === 'GitHub') {
+            button.style.top = '80%';
+          } if (button.id === 'Projects') {
+            button.style.top = '20%';
+          }
+        }
+        else {
+          button.setAttribute("style", 
+          "font-size: 1.2cm; height: 100px; margin-left: 0; left: 150px; top: 0; margin-top: 40px; transform: translate(-50%, -0%);");
+        }
+      }
+      let projects = document.createElement('div');
+      projects.style.marginLeft = '13%';
+      projects.style.width = '70%';
+      projects.style.paddingTop = '15%'
+
+      let image = new Image();
+      image.src = 'Images/tpMtgHoYg6.gif';
+      image.style.width = '90%';
+      image.style.margin = 'auto';
+
+      let projectText = document.createElement('div');
+      projectText.innerHTML = "JAVA is showing it's age somewhat with regards to popularity and ease of implementation\
+      across today's diverse range of systems, however the language remains a valuable asset with regards to legacy systems\
+      such as those found at a traditional Japanese firm.<br><br> Moreover, the language is often an entry-point to a computer\
+      science degree, where fundamental concepts are made palatable by the consistency of a statically-typed language:";
+
+      projectText.style.fontSize = 'x-large';
+
+
+      // let page = document.createElement('object');
+      // page.data = "https://gist.github.com/Athelian/4699cca9db0c1beb146d672a20966c6d.js";
+
+
+      projects.append(projectText);
+      projects.append(document.createElement('br'));
+      projects.append(image);
+      
+      bgF.prepend(projects);
+      //bgF.prepend(page)
     }
     else { 
       titleBox.setAttribute("style", "all: null");
-      menuButtons.setAttribute("style", "all: null");
+      for (button of buttons) {
+        button.setAttribute("style", "all: null");
+      }
     }
     blendInitialiser = blendBgProjects(increasing);
     blendInitialiser();
   };
 
+  const buttonColors = {Projects: 'Pink', About: 'Orange', GitHub: 'Purple'}
   let increasing = true;
-  projectButton.onclick = function projectButtonClicker () {
-    projectButtonAnimator(increasing);
-    increasing = !increasing
-    this.onclick = null;
-    setTimeout(function() {projectButton.onclick = projectButtonClicker}, 1500); // Prevent button spam
-  }
-}
+  let colorSelected = null;
+
+  (setButtonAnimations = () => {
+    for (let button of buttons) {
+      button.onclick = function buttonClicker() {
+        colorSelected = (increasing) ? buttonColors[button.id] : colorSelected;
+        projectButtonAnimator(increasing, this);
+        for (let button of buttons) {
+          button.onclick = null;
+        }
+        increasing = !increasing
+        setTimeout(function() {setButtonAnimations()}, 1300); // Prevent button spam
+      }
+    }
+  })();
+};
